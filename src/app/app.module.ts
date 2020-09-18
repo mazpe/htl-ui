@@ -13,6 +13,9 @@ import { KeyListComponent } from './components/key/list/list.component';
 import { TechnicianAddComponent } from './components/technician/add/add.component';
 import { TechnicianDetailsComponent } from './components/technician/details/details.component';
 import { TechnicianListComponent } from './components/technician/list/list.component';
+import { OrderAddComponent } from './components/order/add/add.component';
+import { OrderDetailsComponent } from './components/order/details/details.component';
+import { OrderListComponent } from './components/order/list/list.component';
 import {FormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {InterceptorServices} from "./interceptor.interceptor";
@@ -29,7 +32,10 @@ import {CommonModule} from "@angular/common";
     KeyListComponent,
     TechnicianAddComponent,
     TechnicianDetailsComponent,
-    TechnicianListComponent
+    TechnicianListComponent,
+    OrderAddComponent,
+    OrderDetailsComponent,
+    OrderListComponent
   ],
   imports: [
     CommonModule,
