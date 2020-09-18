@@ -10,6 +10,9 @@ import { VehiclesListComponent } from './components/vehicle/list/vehicles-list.c
 import { KeyAddComponent } from './components/key/add/add.component';
 import { KeyDetailsComponent } from './components/key/details/details.component';
 import { KeyListComponent } from './components/key/list/list.component';
+import { TechnicianAddComponent } from './components/technician/add/add.component';
+import { TechnicianDetailsComponent } from './components/technician/details/details.component';
+import { TechnicianListComponent } from './components/technician/list/list.component';
 import {FormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {InterceptorServices} from "./interceptor.interceptor";
@@ -23,7 +26,10 @@ import {CommonModule} from "@angular/common";
     VehiclesListComponent,
     KeyAddComponent,
     KeyDetailsComponent,
-    KeyListComponent
+    KeyListComponent,
+    TechnicianAddComponent,
+    TechnicianDetailsComponent,
+    TechnicianListComponent
   ],
   imports: [
     CommonModule,
