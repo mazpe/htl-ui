@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { VehicleAddComponent } from './components/vehicle/add/vehicle-add.component';
 import { VehicleDetailsComponent } from './components/vehicle/details/vehicle-details.component';
 import { VehiclesListComponent } from './components/vehicle/list/vehicles-list.component';
+import { KeyAddComponent } from './components/key/add/add.component';
+import { KeyDetailsComponent } from './components/key/details/details.component';
+import { KeyListComponent } from './components/key/list/list.component';
 import {FormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {InterceptorServices} from "./interceptor.interceptor";
@@ -17,7 +20,10 @@ import {CommonModule} from "@angular/common";
     AppComponent,
     VehicleAddComponent,
     VehicleDetailsComponent,
-    VehiclesListComponent
+    VehiclesListComponent,
+    KeyAddComponent,
+    KeyDetailsComponent,
+    KeyListComponent
   ],
   imports: [
     CommonModule,
