@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const baseUrl = 'http://api.homestead.test/api/vehicles';
+const baseUrl = 'http://localhost:8000/api/vehicles';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,11 @@ export class VehicleService {
 
   get(id): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`);
+  }
+
+  getKeys(id): Observable<any> {
+    console.log('service ' + id);
+    return this.http.get(`${baseUrl}/${id}/keys`);
   }
 
   create(data): Observable<any> {

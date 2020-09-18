@@ -27,12 +27,10 @@ export class OrderDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.message = '';
-    this.getOrder(this.route.snapshot.paramMap.get('id'));
+    const id = this.route.snapshot.paramMap.get('id');
+    this.getOrder(id);
     this.vehicleService.getAll().subscribe(response => {
       this.vehiclesList = response.data
-    });
-    this.keyService.getAll().subscribe(response => {
-      this.keysList = response.data
     });
     this.technicianService.getAll().subscribe(response => {
       this.techniciansList = response.data
@@ -44,6 +42,10 @@ export class OrderDetailsComponent implements OnInit {
       .subscribe(
         response => {
           this.currentOrder = response.data;
+          this.vehicleService.getKeys(this.currentOrder.vehicle_id).subscribe(
+            vehicleResponse => {
+            this.keysList = vehicleResponse.data
+          });
           console.log(response);
         },
         error => {
@@ -73,5 +75,11 @@ export class OrderDetailsComponent implements OnInit {
         error => {
           console.log(error);
         });
+  }
+
+  triggerVehicleKeys(id): void {
+    this.vehicleService.getKeys(id).subscribe(response => {
+      this.keysList = response.data
+    });
   }
 }

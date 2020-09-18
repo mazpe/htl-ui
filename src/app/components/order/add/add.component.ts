@@ -36,9 +36,6 @@ export class OrderAddComponent implements OnInit {
     this.vehicleService.getAll().subscribe(response => {
         this.vehiclesList = response.data
       });
-    this.keyService.getAll().subscribe(response => {
-      this.keysList = response.data
-    });
     this.technicianService.getAll().subscribe(response => {
       this.techniciansList = response.data
     });
@@ -74,6 +71,12 @@ export class OrderAddComponent implements OnInit {
       note: '',
       status: ''
     };
+  }
+
+  triggerVehicleKeys(id): void {
+    this.vehicleService.getKeys(id).subscribe(response => {
+      this.keysList = response.data
+    });
   }
 
 }

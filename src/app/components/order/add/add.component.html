@@ -9,9 +9,10 @@
           class="form-control"
           id="vehicle_id"
           name="vehicle_id"
+          (change)="triggerVehicleKeys(order.vehicle_id)"
         >
           <option *ngFor="let vehicle of vehiclesList; let i = index" [value]="vehicle.id">
-            {{vehicle.make}}
+            {{vehicle.year}} {{vehicle.make}} {{vehicle.model}}
           </option>
         </select>
       </div>
