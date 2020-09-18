@@ -1,0 +1,79 @@
+<div style="width: 400px; margin: auto;">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+
+      <div class="form-group">
+        <label for="vehicle_id">Vehicle ID</label>
+        <select
+          [(ngModel)]="order.vehicle_id"
+          class="form-control"
+          id="vehicle_id"
+          name="vehicle_id"
+        >
+          <option *ngFor="let vehicle of vehiclesList; let i = index" [value]="vehicle.id">
+            {{vehicle.make}}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="key_id">Key ID</label>
+        <select
+          [(ngModel)]="order.key_id"
+          class="form-control"
+          id="key_id"
+          name="key_id"
+        >
+          <option *ngFor="let key of keysList; let i = index" [value]="key.id">
+            {{key.item_name}}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="technician_id">Technician ID</label>
+        <select
+          [(ngModel)]="order.technician_id"
+          class="form-control"
+          id="technician_id"
+          name="technician_id"
+        >
+          <option *ngFor="let technician of techniciansList; let i = index" [value]="technician.id">
+            {{technician.last_name}}, {{technician.last_name}}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="note">Note</label>
+        <input
+          class="form-control"
+          id="note"
+          required
+          [(ngModel)]="order.note"
+          name="note"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status</label>
+        <select
+          [(ngModel)]="order.status"
+          class="form-control"
+          id="status"
+          name="status"
+        >
+          <option value="pending">Pending</option>
+          <option value="approved">Approved</option>
+        </select>
+      </div>
+
+      <button (click)="saveOrder()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newOrder()">Add</button>
+    </div>
+  </div>
+</div>

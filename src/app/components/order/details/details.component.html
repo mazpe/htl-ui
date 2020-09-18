@@ -1,0 +1,97 @@
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="currentOrder" class="edit-form">
+    <h4>Order</h4>
+    <form>
+      <div class="form-group">
+        <label for="id">ID</label>
+        {{currentOrder.title}}
+        <input
+          type="text"
+          class="form-control"
+          id="id"
+          [(ngModel)]="currentOrder.id"
+          name="id"
+        />
+      </div>
+      <div class="form-group">
+        <label for="vehicle_id">Vehicle ID</label>
+        <select
+          [(ngModel)]="currentOrder.vehicle_id"
+          class="form-control"
+          id="vehicle_id"
+          name="vehicle_id"
+        >
+          <option *ngFor="let vehicle of vehiclesList; let i = index" [value]="vehicle.id">
+            {{vehicle.make}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="key_id">Key ID</label>
+        <select
+          [(ngModel)]="currentOrder.key_id"
+          class="form-control"
+          id="key_id"
+          name="key_id"
+        >
+          <option *ngFor="let key of keysList; let i = index" [value]="key.id">
+            {{key.item_name}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="technician_id">Technician</label>
+        <select
+          [(ngModel)]="currentOrder.technician_id"
+          class="form-control"
+          id="technician_id"
+          name="technician_id"
+        >
+          <option *ngFor="let technician of techniciansList; let i = index" [value]="technician.id">
+            {{technician.last_name}}, {{technician.first_name}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="note">Note</label>
+        <input
+          type="text"
+          class="form-control"
+          id="note"
+          [(ngModel)]="currentOrder.note"
+          name="note"
+        />
+      </div>
+      <div class="form-group">
+        <label for="status">Status</label>
+        <select
+          [(ngModel)]="currentOrder.status"
+          class="form-control"
+          id="status"
+          name="status"
+        >
+          <option value="pending">Pending</option>
+          <option value="approved">Approved</option>
+        </select>
+      </div>
+    </form>
+
+    <button class="btn btn-danger" (click)="deleteOrder()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="btn btn-success"
+      (click)="updateOrder()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentOrder">
+    <br />
+    <p>Cannot access this Order...</p>
+  </div>
+</div>

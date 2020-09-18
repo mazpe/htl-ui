@@ -9,6 +9,9 @@ import { KeyAddComponent } from './components/key/add/add.component';
 import { TechnicianListComponent } from './components/technician/list/list.component';
 import { TechnicianDetailsComponent } from './components/technician/details/details.component';
 import { TechnicianAddComponent } from './components/technician/add/add.component';
+import { OrderListComponent } from './components/order/list/list.component';
+import { OrderDetailsComponent } from './components/order/details/details.component';
+import { OrderAddComponent } from './components/order/add/add.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'vehicles', pathMatch: 'full' },
@@ -21,6 +24,9 @@ const routes: Routes = [
   { path: 'technicians', component: TechnicianListComponent },
   { path: 'technicians/add', component: TechnicianAddComponent },
   { path: 'technicians/:id', component: TechnicianDetailsComponent },
+  { path: 'orders', component: OrderListComponent },
+  { path: 'orders/add', component: OrderAddComponent },
+  { path: 'orders/:id', component: OrderDetailsComponent },
 ];
 
 @NgModule({
