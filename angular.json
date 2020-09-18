@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "htl-ui"
+  "defaultProject": "htl-ui",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,0 +1,76 @@
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="currentVehicle" class="edit-form">
+    <h4>Vehicle</h4>
+    <form>
+      <div class="form-group">
+        <label for="id">ID</label>
+        {{currentVehicle.title}}
+        <input
+          type="text"
+          class="form-control"
+          id="id"
+          [(ngModel)]="currentVehicle.id"
+          name="id"
+        />
+      </div>
+      <div class="form-group">
+        <label for="year">Year</label>
+        <input
+          type="text"
+          class="form-control"
+          id="year"
+          [(ngModel)]="currentVehicle.year"
+          name="year"
+        />
+      </div>
+      <div class="form-group">
+        <label for="make">Make</label>
+        <input
+          type="text"
+          class="form-control"
+          id="make"
+          [(ngModel)]="currentVehicle.make"
+          name="make"
+        />
+      </div>
+      <div class="form-group">
+        <label for="model">Model</label>
+        <input
+          type="text"
+          class="form-control"
+          id="model"
+          [(ngModel)]="currentVehicle.model"
+          name="model"
+        />
+      </div>
+      <div class="form-group">
+        <label for="vin">VIN</label>
+        <input
+          type="text"
+          class="form-control"
+          id="vin"
+          [(ngModel)]="currentVehicle.vin"
+          name="vin"
+        />
+      </div>
+    </form>
+
+    <button class="badge badge-danger mr-2" (click)="deleteVehicle()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success"
+      (click)="updateVehicle()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentVehicle">
+    <br />
+    <p>Cannot access this Vehicle...</p>
+  </div>
+</div>
