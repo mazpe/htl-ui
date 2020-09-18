@@ -1,0 +1,66 @@
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="currentTechnician" class="edit-form">
+    <h4>Technician</h4>
+    <form>
+      <div class="form-group">
+        <label for="id">ID</label>
+        {{currentTechnician.title}}
+        <input
+          type="text"
+          class="form-control"
+          id="id"
+          [(ngModel)]="currentTechnician.id"
+          name="id"
+        />
+      </div>
+      <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="first_name"
+          [(ngModel)]="currentTechnician.first_name"
+          name="first_name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="last_name"
+          [(ngModel)]="currentTechnician.last_name"
+          name="last_name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="truck_number">Truck Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="truck_number"
+          [(ngModel)]="currentTechnician.truck_number"
+          name="truck_number"
+        />
+      </div>
+    </form>
+
+    <button class="btn btn-danger" (click)="deleteTechnician()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="btn btn-success"
+      (click)="updateTechnician()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentTechnician">
+    <br />
+    <p>Cannot access this Technician...</p>
+  </div>
+</div>
