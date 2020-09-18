@@ -1,0 +1,76 @@
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="currentKey" class="edit-form">
+    <h4>Key</h4>
+    <form>
+      <div class="form-group">
+        <label for="id">ID</label>
+        {{currentKey.title}}
+        <input
+          type="text"
+          class="form-control"
+          id="id"
+          [(ngModel)]="currentKey.id"
+          name="id"
+        />
+      </div>
+      <div class="form-group">
+        <label for="vehicle_id">Vehicle ID</label>
+        <input
+          type="text"
+          class="form-control"
+          id="vehicle_id"
+          [(ngModel)]="currentKey.vehicle_id"
+          name="vehicle_id"
+        />
+      </div>
+      <div class="form-group">
+        <label for="item_name">Item Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="item_name"
+          [(ngModel)]="currentKey.item_name"
+          name="item_name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentKey.description"
+          name="description"
+        />
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input
+          type="text"
+          class="form-control"
+          id="price"
+          [(ngModel)]="currentKey.price"
+          name="price"
+        />
+      </div>
+    </form>
+
+    <button class="btn btn-danger" (click)="deleteKey()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="btn btn-success"
+      (click)="updateKey()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentKey">
+    <br />
+    <p>Cannot access this Key...</p>
+  </div>
+</div>
